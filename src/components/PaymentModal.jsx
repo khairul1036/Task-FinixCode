@@ -32,7 +32,7 @@ const PaymentModal = ({ isOpen, onClose, onContinue }) => {
         </div>
 
         {/* Title */}
-        <h2 className="text-center text-4xl text-[#FDE8CD] font-semibold mb-4">
+        <h2 className="text-center text-3xl md:text-4xl text-[#FDE8CD] font-semibold mb-4">
           Choose Payment Method
         </h2>
 

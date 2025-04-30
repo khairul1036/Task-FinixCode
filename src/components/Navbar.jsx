@@ -11,11 +11,14 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white shadow-md">
       <div className="flex justify-between items-center px-6 py-4 md:px-10">
         {/* Logo */}
-        <div>
+        <div className="flex items-center gap-2">
           <img src="/image/logo.png" alt="logo" className="h-10 w-auto" />
+          <span className="text-casal text-2xl font-semibold">
+            Football Finals
+          </span>
         </div>
 
         {/* Desktop Middle Section */}
@@ -37,7 +40,7 @@ const Navbar = () => {
             <input
               type="text"
               placeholder="Search"
-              className="px-4 py-2 focus:outline-none"
+              className="px-4 py-2 focus:outline-none w-44 sm:w-64"
             />
             <CiSearch className="w-8 h-8 text-gray-600 bg-gray-100 p-1 rounded-full mr-2" />
           </div>
@@ -67,19 +70,26 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Content */}
-      {isMobileMenuOpen && (
-        <div className="flex flex-col items-start gap-4 px-6 pb-4 md:hidden">
-          <div className="w-full">
+      <div
+        className={`${
+          isMobileMenuOpen ? "max-h-screen" : "max-h-0"
+        } overflow-hidden transition-all duration-300 ease-in-out md:hidden`}
+      >
+        <div className="flex flex-col items-start gap-4 px-6 pb-4 bg-white">
+          {/* Date Picker */}
+          <div className="flex items-center w-full shadow-md rounded-full overflow-hidden">
             <DatePicker
               selected={selectedDate}
               onChange={(date) => setSelectedDate(date)}
               placeholderText="Select date"
-              className="w-full pl-4 pr-10 py-2 rounded-full border focus:outline-none"
+              className="w-full pl-4 pr-10 py-2 rounded-full  focus:outline-none"
               dateFormat="MMMM d, yyyy"
             />
+            <CiCalendar className="w-8 h-8 text-white bg-casal p-1 rounded-full" />
           </div>
 
-          <div className="w-full">
+          {/* Search Input */}
+          <div className="w-full mb-4">
             <div className="flex items-center w-full shadow-md rounded-full overflow-hidden">
               <input
                 type="text"
@@ -90,21 +100,24 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-2 bg-gray-200 px-4 py-2 rounded-full w-full justify-center">
+          {/* Leaderboard Button */}
+          <div className="flex items-center gap-2 bg-gray-200 px-4 py-2 rounded-full w-full justify-center mb-4">
             <img src="/image/logo.png" alt="logo" className="h-6 w-auto" />
             <span className="text-casal">Leaderboard</span>
           </div>
 
-          <div className="border border-[#34735F] px-4 py-2 rounded-full w-full text-center">
+          {/* Login / Sign up Button */}
+          <div className="border border-[#34735F] px-4 py-2 rounded-full w-full text-center mb-4">
             <h4 className="text-casal">Login / Sign up</h4>
           </div>
 
+          {/* User Icon Button */}
           <div className="flex items-center gap-2 border border-gray-200 text-gray-700 px-4 py-2 rounded-full w-full justify-center">
             <FaBars className="h-6" />
             <FaCircleUser className="h-8" />
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };

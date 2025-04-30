@@ -16,25 +16,49 @@
 /* tabs css start */
 .tab-list {
   display: flex;
+  /* flex-wrap: wrap; allows wrapping on smaller screens */
   justify-content: space-between;
   border-bottom: 1px solid #ddd;
   width: 100%;
+  gap: 0.5rem;
+  overflow-x: auto; /* enables horizontal scrolling if needed */
+  scrollbar-width: none; /* hide scrollbar in Firefox */
+  -ms-overflow-style: none; /* hide scrollbar in IE 10+ */
+}
+
+.tab-list::-webkit-scrollbar {
+  display: none; /* hide scrollbar in Webkit */
 }
 
 .tab-item {
-  flex: 1;
+  flex: 1 0 auto;
+  min-width: 100px;
   text-align: center;
-  padding: 1rem 0;
+  padding: 0.75rem 1rem;
   cursor: pointer;
   color: #1d1d1d;
-  font-size: 24px;
+  font-size: 18px;
   border-bottom: 2px solid transparent;
   transition: all 0.3s ease;
   outline: none;
   user-select: none;
+  white-space: nowrap;
 }
 
-/* Remove focus outline and "clicked" appearance */
+/* Make font size larger on bigger screens */
+@media (min-width: 640px) {
+  .tab-item {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .tab-item {
+    font-size: 24px;
+  }
+}
+
+/* Remove focus outline */
 .tab-item:focus {
   outline: none;
   box-shadow: none;
@@ -45,5 +69,4 @@
   border-bottom: 2px solid #da6049;
   color: #da6049;
 }
-
 /* tabs css end */

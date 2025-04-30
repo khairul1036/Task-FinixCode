@@ -2,7 +2,7 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-10 py-10">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-10">
       {/* Main Image - Left side (2 columns on md+) */}
       <div className="md:col-span-2 rounded overflow-hidden h-64 sm:h-80 md:h-full">
         <img
@@ -15,7 +15,7 @@ const Banner = () => {
       {/* Right Column with stacked images */}
       <div className="flex flex-col gap-4">
         {/* First Image */}
-        <div className="relative h-32 sm:h-40 md:h-1/2 overflow-hidden rounded-3xl">
+        <div className="relative h-32 sm:h-40 md:h-1/2 overflow-hidden hidden md:block rounded-3xl">
           <img
             src="/image/Football_Image_silder.png"
             alt="football"

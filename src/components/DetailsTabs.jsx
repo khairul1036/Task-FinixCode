@@ -4,7 +4,6 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import InfoTabContent from "./InfoTabContent";
 import PlayerTabContent from "./PlayerTabContent";
 import CommentsTabContent from "./CommentsTabContent";
-// import "./customTabs.css"; // Custom styles
 
 const DetailsTabs = () => {
   return (
