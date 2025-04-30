@@ -1,3 +1,6 @@
+"use client";
+import React, { useState } from "react";
+import PaymentModal from "@/components/PaymentModal";
 import Banner from "@/components/Banner";
 import { MdOutlineFileUpload } from "react-icons/md";
 import { GiEternalLove } from "react-icons/gi";
@@ -6,6 +9,13 @@ import DetailsTabs from "@/components/DetailsTabs";
 import OthersEvents from "@/components/OthersEvents";
 
 export default function Home() {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleContinue = (paymentMethod) => {
+    console.log("Selected Payment Method:", paymentMethod);
+    // Handle payment logic here
+  };
+
   return (
     <div>
       <Banner />
@@ -45,13 +55,26 @@ export default function Home() {
                 <span className="text-sm text-gray-700">(both)</span>
               </div>
             </div>
-            <button className="w-full text-xl font-semibold text-center bg-[#63CFA0] py-4 rounded-full mt-4">
+            {/* <button className="w-full text-xl font-semibold text-center bg-[#63CFA0] py-4 rounded-full mt-4">
+              Join event
+            </button> */}
+            <button
+              className="w-full text-xl font-semibold text-center bg-[#63CFA0] py-4 rounded-full mt-4 cursor-pointer"
+              onClick={() => setShowModal(true)}
+            >
               Join event
             </button>
+
+            {/* Modal */}
+            <PaymentModal
+              isOpen={showModal}
+              onClose={() => setShowModal(false)}
+              onContinue={handleContinue}
+            />
           </div>
         </div>
       </div>
-      <OthersEvents/>
+      <OthersEvents />
     </div>
   );
 }
