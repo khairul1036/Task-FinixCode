@@ -11,7 +11,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="bg-white shadow-md">
+    <div className="bg-white">
       <div className="flex justify-between items-center px-6 py-4 md:px-10">
         {/* Logo */}
         <div className="flex items-center gap-2">
