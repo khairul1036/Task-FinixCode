@@ -13,10 +13,10 @@ export default function RootLayout({ children }) {
         <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet" />
       </head>
       <body className="font-satoshi antialiased bg-[#F4F5EF]">
-        <nav className="bg-white">
+        <nav>
           <Navbar/>
         </nav>
-        {children}
+        <main>{children}</main>
       </body>
     </html>
   );

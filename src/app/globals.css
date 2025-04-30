@@ -11,3 +11,39 @@
 .bg-casal{
   background-color: #34735F;
 }
+
+
+/* tabs css start */
+.tab-list {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 1rem 0;
+  cursor: pointer;
+  color: #1d1d1d;
+  font-size: 24px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  outline: none;
+  user-select: none;
+}
+
+/* Remove focus outline and "clicked" appearance */
+.tab-item:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Active tab styling */
+.tab-active {
+  border-bottom: 2px solid #da6049;
+  color: #da6049;
+}
+
+/* tabs css end */
